@@ -148,6 +148,8 @@ if __name__ == '__main__':
 
     # WSGIサーバの起動
     httpd = make_server('', 8888, wsgi_app)
-    print('MyWSGIServer: ホスト{address}、ポート{port}にて起動しました\n'.format(
+'''
+print('MyWSGIServer: ホスト{address}、ポート{port}にて起動しました'.format(
         address=httpd.server_name, port=httpd.server_port))
-    httpd.serve_forever()
+'''
+httpd.serve_forever()
