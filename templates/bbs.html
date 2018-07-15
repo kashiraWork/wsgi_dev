@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>テスト掲示板</title>
+    </head>
+    <body>
+        <h1>テスト掲示板</h1>
+        <form action="/bbs" method="POST">
+            タイトル： <input type="text" name="title" size="60"><br>
+            ハンドル名： <input type="text" name="handle"><br>
+            <textarea name="message" rows="4" cols="60"></textarea>
+            <input type="submit">
+        </form>
+        <hr>
+
+        {% for m in messages %}
+            <p>
+                「{{ m.title }}」&nbsp;&nbsp;
+                {{ m.handle }} さん&nbsp;&nbsp
+                {{ m.created_at }}
+            </p>
+           <p>{{ m.message }}</p>
+          <hr>
+        {% endfor %}
+
+    </body>
+</html>
