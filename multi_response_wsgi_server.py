@@ -147,6 +147,6 @@ if __name__ == '__main__':
     wsgi_app = getattr(module, application)
 
     # WSGIサーバの起動
-    httpd = make_server('', 8888, wsgi_app)
+    httpd = make_server('', 80, wsgi_app)
 
 httpd.serve_forever()
